@@ -1,18 +1,16 @@
-package isatty_test
+package tty_test
 
 import (
 	"fmt"
 	"os"
 
-	"github.com/mattn/go-isatty"
+	"github.com/akyoto/tty"
 )
 
 func Example() {
-	if isatty.IsTerminal(os.Stdout.Fd()) {
-		fmt.Println("Is Terminal")
-	} else if isatty.IsCygwinTerminal(os.Stdout.Fd()) {
-		fmt.Println("Is Cygwin/MSYS2 Terminal")
+	if tty.IsTerminal(os.Stdout.Fd()) {
+		fmt.Println("Is a terminal")
 	} else {
-		fmt.Println("Is Not Terminal")
+		fmt.Println("Is not a terminal")
 	}
 }

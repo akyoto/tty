@@ -1,3 +1,5 @@
-module github.com/mattn/go-isatty
+module github.com/akyoto/tty
 
-require golang.org/x/sys v0.0.0-20190813064441-fde4db37ae7a
+require golang.org/x/sys v0.0.0-20190910064555-bbd175535a8b
+
+go 1.13

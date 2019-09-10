@@ -1,50 +1,43 @@
-# go-isatty
+# tty
 
-[![Godoc Reference](https://godoc.org/github.com/mattn/go-isatty?status.svg)](http://godoc.org/github.com/mattn/go-isatty)
-[![Build Status](https://travis-ci.org/mattn/go-isatty.svg?branch=master)](https://travis-ci.org/mattn/go-isatty)
-[![Coverage Status](https://coveralls.io/repos/github/mattn/go-isatty/badge.svg?branch=master)](https://coveralls.io/github/mattn/go-isatty?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/mattn/go-isatty)](https://goreportcard.com/report/mattn/go-isatty)
+[![Godoc][godoc-image]][godoc-url]
+[![Report][report-image]][report-url]
+[![Tests][tests-image]][tests-url]
+[![Coverage][coverage-image]][coverage-url]
+[![Sponsor][sponsor-image]][sponsor-url]
 
-isatty for golang
+Terminal detection for Go.
 
-## Usage
+## API
 
 ```go
-package main
-
-import (
-	"fmt"
-	"github.com/mattn/go-isatty"
-	"os"
-)
-
-func main() {
-	if isatty.IsTerminal(os.Stdout.Fd()) {
-		fmt.Println("Is Terminal")
-	} else if isatty.IsCygwinTerminal(os.Stdout.Fd()) {
-		fmt.Println("Is Cygwin/MSYS2 Terminal")
-	} else {
-		fmt.Println("Is Not Terminal")
-	}
-}
+isTerminal := tty.IsTerminal(os.Stdout.Fd())
 ```
 
-## Installation
+## Authors
 
-```
-$ go get github.com/mattn/go-isatty
-```
+* Yasuhiro Matsumoto (a.k.a mattn)
+* Eduard Urbach (minor modifications)
 
-## License
+## Style
 
-MIT
+Please take a look at the [style guidelines](https://github.com/akyoto/quality/blob/master/STYLE.md) if you'd like to make a pull request.
 
-## Author
+## Sponsors
 
-Yasuhiro Matsumoto (a.k.a mattn)
+| [![Cedric Fung](https://avatars3.githubusercontent.com/u/2269238?s=70&v=4)](https://github.com/cedricfung) | [![Scott Rayapoullé](https://avatars3.githubusercontent.com/u/11772084?s=70&v=4)](https://github.com/soulcramer) | [![Eduard Urbach](https://avatars3.githubusercontent.com/u/438936?s=70&v=4)](https://eduardurbach.com) |
+| --- | --- | --- |
+| [Cedric Fung](https://github.com/cedricfung) | [Scott Rayapoullé](https://github.com/soulcramer) | [Eduard Urbach](https://eduardurbach.com) |
 
-## Thanks
+Want to see [your own name here?](https://github.com/users/akyoto/sponsorship)
 
-* k-takata: base idea for IsCygwinTerminal
-
-    https://github.com/k-takata/go-iscygpty
+[godoc-image]: https://godoc.org/github.com/akyoto/tty?status.svg
+[godoc-url]: https://godoc.org/github.com/akyoto/tty
+[report-image]: https://goreportcard.com/badge/github.com/akyoto/tty
+[report-url]: https://goreportcard.com/report/github.com/akyoto/tty
+[tests-image]: https://cloud.drone.io/api/badges/akyoto/tty/status.svg
+[tests-url]: https://cloud.drone.io/akyoto/tty
+[coverage-image]: https://codecov.io/gh/akyoto/tty/graph/badge.svg
+[coverage-url]: https://codecov.io/gh/akyoto/tty
+[sponsor-image]: https://img.shields.io/badge/github-donate-green.svg
+[sponsor-url]: https://github.com/users/akyoto/sponsorship
